@@ -1,0 +1,339 @@
+@charset "UTF-8";
+
+:root {
+  --cor-primaria: #28a745;        /* Verde vivo */
+  --cor-primaria-escura: #1e7e34; /* Verde escuro para hover */
+  --cor-secundaria: #ffc107;      /* Amarelo vibrante */
+  --cor-secundaria-hover: #e0a800; /* Amarelo escuro hover */
+  --cor-fundo: #f9fbe7;           /* Fundo amarelo muito clarinho */
+  --cor-texto: #2e2e2e;           /* Texto escuro para boa leitura */
+  --cor-footer: #1b5e20;          /* Verde escuro para rodapé */
+  --cor-link: #cddc39;            /* Amarelo-esverdeado para links */
+  --cor-link-hover: #afb42b;      /* Hover do link */
+  --cor-faq-bg: #fffde7;          /* Fundo FAQ amarelo clarinho */
+  --cor-borda: #dce775;           /* Verde amarelo suave para bordas */
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    color: var(--cor-texto);
+    line-height: 1.6rem;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background-color: var(--cor-primaria);
+    padding: 30px 10px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1{
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: max-content;
+    margin: auto;
+}
+
+section{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.767);
+}
+
+.video-introducao, .introducao{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    padding: 10px;
+    box-shadow: none;
+}
+
+.introducao p{
+    margin-top: 10px;
+    width: 500px;
+    text-align:justify;
+}
+
+.introducao a{
+    margin-top: 50px;
+    height: 50px;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.video-introducao{
+    margin: 10px 0px;
+}
+
+.video-introducao iframe{
+    max-height: 100%;
+    max-width: 90vw;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.vantagens ul, .temas-abordados ul{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.vantagens li, .temas-abordados li{
+    padding: 5px 0px;
+}
+
+.quem-sou-eu, .plano{
+    min-height: 100vh;
+}
+
+.quem-sou-eu{
+    display: grid;
+    grid-template-areas: 
+    'ask ask'
+    'img proposite';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.quem-sou-eu h2{
+    grid-area: ask;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 1.8rem;
+}
+.mentor{
+    grid-area: img;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);;
+}
+.texto-mentor{
+    grid-area: proposite;
+    max-width: 400px;
+    line-height: 1.5rem;
+    text-align: justify;
+    padding: 10px;
+    background-color: var(--cor-faq-bg);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1)
+}
+
+.plano{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: max-content;
+    width:400px;
+    padding: 50px 25px 25px 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: justify;
+    color:var(--cor-texto);
+    transition: all 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+.card h3{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0px;
+    text-align: center;
+    background-color: var(--cor-primaria);
+    border-radius: 8px 8px 0px 0px;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.card p{
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+button, .introducao a{
+    
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: white;
+    padding: 10px;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 0px 6px 12px rgba(40, 167, 69, 0.6);
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition:all 0.3s ease;
+}
+button:hover, .introducao a:hover{
+    background:linear-gradient(90deg, var(--cor-primaria-escura), var(--cor-primaria));
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(40, 167, 69, 0.8);
+    text-shadow: 1px 1px 5px black;
+}
+
+button{
+    margin-top: auto;
+    height: max-content;
+    width: 100%;
+}
+
+
+.faq details{
+    margin-top: 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.faq summary{
+    background: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.faq summary:hover{
+   background-color: var(--cor-secundaria-hover);
+}
+.faq p{
+    padding: 10px;
+    background-color: var(--cor-faq-bg);
+    margin: 0;
+}
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: var(--cor-footer);
+    color: white;
+}
+footer a{
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+    transition: 0.1s ease;
+}
+footer a:hover{
+    color: transparent;
+    -webkit-text-stroke: 1px var(--cor-secundaria-hover);
+    text-shadow: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+
+@media (max-width: 768px){
+    header{
+        margin-bottom: 10px;
+    }
+
+    header h1{
+        font-size: 1.4rem;
+    }
+
+
+    main h2{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+        line-height: 2rem;
+        max-width: 400px;
+    }
+
+    .quem-sou-eu{
+        grid-template-areas: 
+        'ask'
+        'img'
+        'proposite';
+        grid-template-columns: 1fr;
+    } 
+
+    footer{
+        height: max-content;
+        
+    }
+    footer p{
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+@media (max-width: 620px){
+    header{
+        margin-bottom: 20px;
+    }
+
+    header h1{
+        font-size: 1.2rem;
+    }
+
+
+    main h2{
+        font-size: 1.1rem;
+    }
+
+    p{
+        font-size: 0.9rem;
+        max-width: 380px;
+    }
+}
+
+
+

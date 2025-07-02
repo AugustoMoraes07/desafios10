@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agradecimento</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(130deg, #1E88E5, #43A047);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            text-shadow: 2px 1px 2px black;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="agradecimento">
+        <h1 id="saudacao">Obrigado!</h1>
+        <p>Agora você faz parte do time que transforma o mundo com código 🚀. </p>
+        <a href="./index.html" class="back">VOLTAR</a>
+    </main>
+
+    <script>
+        const nomeSalvo = localStorage.getItem('nome');
+        const saudacao = document.querySelector('#saudacao');
+        
+        if(nomeSalvo){
+            saudacao.innerText = `Obrigado, ${nomeSalvo}!`;
+        }
+
+        setTimeout(() => {
+            window.location.href = './index.html'
+        }, 5000);
+    </script>
+</body>
+</html>
