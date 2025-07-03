@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dados{
+    height: 80vh;
+    
+    width: 100%;
+    border: 1px solid black;
+}
+
+button{
+    height: 35px;
+    width: 30%;
+}

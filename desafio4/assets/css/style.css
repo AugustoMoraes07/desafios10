@@ -61,6 +61,7 @@ main{
 
 .cta{
     height: 70vh;
+    position: relative;
 }
 
 
@@ -136,6 +137,7 @@ button:hover{
 form.mentoria-fechada *{
     color: red !important;
     border-color: red !important;
+    z-index: -1 !important;
 }
 form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-fechada label:hover, form.mentoria-fechada label{
     text-shadow: 2px 1px 1px black !important;} 
@@ -145,8 +147,6 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
     cursor: not-allowed !important;
     transform: none !important;
 }
-
-
 .escassez.hover h1{
     color: transparent;
     text-shadow: none;
@@ -155,3 +155,31 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
 .escassez.hover .vagas-restantes{
     color: red;
 }
+
+
+.div-extra{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+    box-shadow: inset 0 0 30px rgba(255,0,0,0.3);
+}
+
+.div-extra button{
+    height: max-content;
+    width: 40%;
+    padding: 10px;
+}
+
