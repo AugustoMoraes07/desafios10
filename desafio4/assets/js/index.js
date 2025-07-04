@@ -87,9 +87,6 @@ function divExtra() {
         form.style.filter = "blur(3px)";
         form.style.pointerEvents = 'none';
         contemplados(div);
-
-        
-        
     }, 1000);
 }
 
@@ -98,9 +95,7 @@ function contemplados(div) {
     btnInscritos.innerText = 'PESSOAS INSCRITAS';
     
     btnInscritos.addEventListener('click', () => {
-        // const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
-        const inscritos = [];
-
+        const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
         if(inscritos.length === 0){
             alert('Nenhuma pessoa inscrita ainda.');
             return;

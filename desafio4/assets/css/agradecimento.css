@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+header{
+    background: linear-gradient(120deg, green, #BFA93F);
+    padding:10px;
+}
+header h1{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0px 1px 1px black;
+}
+
 main{
     display: flex;
     flex-flow: column nowrap;
@@ -9,11 +22,32 @@ main{
 }
 
 .dados{
-    height: 80vh;
-    
+    display: grid;
+    grid-template-areas: 
+    "table table";
+    height: 60vh;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+.dados table{
+    grid-area: table;
     width: 100%;
     border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
 }
+table{
+    overflow-x: auto;
+}
+td{
+    border: 1px solid black;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+
 
 button{
     height: 35px;
