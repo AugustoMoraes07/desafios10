@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+    height: max-content;
+}
+
 header{
     background: linear-gradient(120deg, green, #BFA93F);
     padding:10px;
@@ -16,16 +20,13 @@ header h1{
 main{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 100vh;
+   min-height: 100vh;
+   padding-bottom: 30px;
 }
 
 .dados{
-    display: grid;
-    grid-template-areas: 
-    "table table";
-    height: 60vh;
     width: 100%;
     gap: 10px;
     padding: 10px;
@@ -37,13 +38,12 @@ main{
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-}
-table{
     overflow-x: auto;
 }
+
 td{
     border: 1px solid black;
-    padding: 10px;
+    padding: 20px;
     text-decoration: underline;
 }
 
@@ -52,4 +52,7 @@ td{
 button{
     height: 35px;
     width: 30%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
