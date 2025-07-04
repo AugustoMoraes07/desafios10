@@ -187,13 +187,14 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
     
     font-size: 0.8rem;
     margin-top: 5px;
+    text-shadow: 1px 1px 1px black;
     display: none;
     transition: all 0.3s ease;
 }
 
 .erro-email{
-    color: red;
+    color: red !important;
 }
-.erro-email{
-    color: green;
+.envio-email{
+    color: green !important;
 }

@@ -44,7 +44,7 @@ function meuEscopo() {
 
         if (msgErro(emailValor, erroEmail)) return;
 
-        if (jaCadastratado(emailValor, erroEmail)) return;
+        if (jaCadastratado(emailValor, erroEmail, envioEmail)) return;
 
         if (vagas > 0) {
             vagas--;
@@ -52,13 +52,8 @@ function meuEscopo() {
 
             salvarInscrito(nomeValor, emailValor);
 
-
-            envioEmail.innerHTML = '<p>Formulário enviado com sucesso!</p>'
-            envioEmail.style.display = 'block';
-
-            setTimeout(() => {
-                envioEmail.style.display = 'none'
-            }, 3000);
+            envioSucesso(envioEmail);
+            
             atualizarVagas();
             limpaInput();
         } else {
@@ -72,6 +67,16 @@ function meuEscopo() {
     function emailValido(email) {
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return regex.test(email);
+    }
+
+    function envioSucesso(envioEmail){
+            envioEmail.innerHTML = '<p>Formulário enviado com sucesso!</p>'
+            envioEmail.style.display = 'block';
+
+            setTimeout(() => {
+                envioEmail.innerHTML = '';
+                envioEmail.style.display = 'none';
+            }, 3000);
     }
 
     function msgErro(emailValor, erroEmail) {
@@ -91,7 +96,8 @@ function meuEscopo() {
 
     }
 
-    function jaCadastratado(emailValor, erroEmail) {
+
+    function jaCadastratado(emailValor, erroEmail, envioEmail) {
         const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
         const jaExiste = inscritos.some(inscrito => inscrito.email === emailValor);
 
@@ -131,6 +137,8 @@ function meuEscopo() {
         }
     }
 
+
+
     function divExtra() {
         setTimeout(() => {
             const div = document.createElement('div');
@@ -164,7 +172,7 @@ function meuEscopo() {
 
     document.addEventListener('keydown', function (e) {
         if (e.ctrlKey && e.key === 'r') {
-            localStorage.setItem('vagas', 1);
+            localStorage.setItem('vagas', 2);
             alert('Vagas resetadas.');
             location.reload();
 
