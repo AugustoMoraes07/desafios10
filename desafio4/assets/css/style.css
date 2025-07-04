@@ -183,10 +183,17 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
     padding: 10px;
 }
 
-.erro-email{
-    color: red;
+.erro-email, .envio-email{
+    
     font-size: 0.8rem;
     margin-top: 5px;
     display: none;
     transition: all 0.3s ease;
+}
+
+.erro-email{
+    color: red;
+}
+.erro-email{
+    color: green;
 }

@@ -33,7 +33,6 @@ function meuEscopo() {
     function limpaInput() {
         nome.value = '';
         email.value = '';
-        nome.focus();
     }
 
     function verificandoVagas() {
@@ -41,10 +40,11 @@ function meuEscopo() {
         const nomeValor = nome.value.trim();
         const emailValor = email.value.trim();
         const erroEmail = document.querySelector('.erro-email');
-        
-        if(msgErro(emailValor, erroEmail)) return;
+        const envioEmail = document.querySelector('.envio-email');
 
-        if(jaCadastratado(emailValor, erroEmail)) return;
+        if (msgErro(emailValor, erroEmail)) return;
+
+        if (jaCadastratado(emailValor, erroEmail)) return;
 
         if (vagas > 0) {
             vagas--;
@@ -52,7 +52,13 @@ function meuEscopo() {
 
             salvarInscrito(nomeValor, emailValor);
 
-            alert('Formulário enviado com sucesso!');
+
+            envioEmail.innerHTML = '<p>Formulário enviado com sucesso!</p>'
+            envioEmail.style.display = 'block';
+
+            setTimeout(() => {
+                envioEmail.style.display = 'none'
+            }, 3000);
             atualizarVagas();
             limpaInput();
         } else {
@@ -81,21 +87,21 @@ function meuEscopo() {
             erroEmail.style.display = 'none';
             return false;
         }
-        
-        
+
+
     }
-    
+
     function jaCadastratado(emailValor, erroEmail) {
         const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
         const jaExiste = inscritos.some(inscrito => inscrito.email === emailValor);
-        
+
         if (jaExiste) {
             erroEmail.innerHTML = '<p>[ERRO] Este email já foi cadastrado.</p>';
             erroEmail.style.display = 'block';
             email.value = '';
             email.focus();
             return true;
-        } else{
+        } else {
             erroEmail.innerHTML = '';
             erroEmail.style.display = 'none';
             return false;
