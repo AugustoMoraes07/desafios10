@@ -38,8 +38,10 @@ function limpaInput() {
 
 function verificandoVagas() {
     let vagas = Number(localStorage.getItem('vagas'));
-    
-    if(!emailValido(email.value)){
+    const nomeValor = nome.value.trim();
+    const emailValor = email.value.trim();
+
+    if(!emailValido(emailValor)){
         alert('Por favor, insira um e-mail válido!');
         email.value = '';
         email.focus();
@@ -50,7 +52,7 @@ function verificandoVagas() {
         vagas--;
         localStorage.setItem('vagas', vagas.toString());
         
-        salvarInscrito(nome.value, email.value);
+        salvarInscrito(nomeValor, emailValor);
         
         alert('Formulário enviado com sucesso!');
         atualizarVagas();
