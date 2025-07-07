@@ -97,7 +97,7 @@ function meuEscopo() {
     }
 
 
-    function jaCadastratado(emailValor, erroEmail, envioEmail) {
+    function jaCadastratado(emailValor, erroEmail) {
         const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
         const jaExiste = inscritos.some(inscrito => inscrito.email === emailValor);
 
@@ -119,9 +119,7 @@ function meuEscopo() {
         let vagas = Number(localStorage.getItem('vagas'));
 
         if (vagas === 0) {
-            vagasEl.style.color = 'red';
-            // Estilo Vermelho
-            vagasEl.style.color = 'red';
+            // Visual btn 
             btn.innerText = 'FECHADO';
             btn.style.background = 'red';
 
@@ -161,24 +159,22 @@ function meuEscopo() {
                 alert('Nenhuma pessoa inscrita ainda.');
                 return;
             } else {
-                window.location.href = './agradecimento.html';
+                mudarPagina();
             }
         })
         div.appendChild(btnInscritos);
     }
 
+    // Event para desenvolvedores
+    // document.addEventListener('keydown', function (e) {
+    //     if (e.ctrlKey && e.key === 'r') {
+    //         localStorage.setItem('vagas', 2);
+    //         alert('Vagas resetadas.');
+    //         location.reload();
 
-
-
-    document.addEventListener('keydown', function (e) {
-        if (e.ctrlKey && e.key === 'r') {
-            localStorage.setItem('vagas', 2);
-            alert('Vagas resetadas.');
-            location.reload();
-
-            form.classList.remove('mentoria-fechada');
-        }
-    });
+    //         form.classList.remove('mentoria-fechada');
+    //     }
+    // });
 
     function salvarInscrito(nome, email) {
         let inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
@@ -187,9 +183,7 @@ function meuEscopo() {
     }
 
     function mudarPagina() {
-        setTimeout(() => {
             window.location.href = './agradecimento.html';
-        }, 5000)
-    }
+        }
 }
 meuEscopo();
