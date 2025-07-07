@@ -19,9 +19,9 @@ body{
 }
 
 main{
-    margin: auto;
     height: 100%;
     width: 100%;
+    margin: auto;
 }
 
 .centralized-flex{
@@ -164,7 +164,7 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
     height: 70vh;
     width: 100vw;
     background-color: rgba(0,0,0,0.8);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -184,7 +184,6 @@ form.mentoria-fechada legend, form.mentoria-fechada legend:hover, form.mentoria-
 }
 
 .erro-email, .envio-email{
-    
     font-size: 0.8rem;
     margin-top: 5px;
     text-shadow: 1px 1px 1px black;

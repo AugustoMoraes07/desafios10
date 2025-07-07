@@ -32,7 +32,6 @@ main{
     padding: 10px;
 }
 .dados table{
-    grid-area: table;
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;

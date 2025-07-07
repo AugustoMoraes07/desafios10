@@ -1,4 +1,5 @@
 const thead = document.querySelector('table thead');
+const tbody = document.querySelector('table tbody');
 
 const inscritos = JSON.parse(localStorage.getItem('inscritos')) || [];
 
@@ -11,7 +12,6 @@ if(inscritos.length > 0){
     `;
     thead.appendChild(trHead);
 
-    const tbody = document.createElement('tbody');
 
     inscritos.forEach(inscrito =>{
         const tr = document.createElement('tr');
